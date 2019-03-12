@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>算法：数组  | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="简介2019年新学期起，决定开始Leetcode刷题，并在博客总结记录。 内容 292 Nim游戏  这其实是一个Bash Game（巴什博弈）问题，一般表述是：n 个物品堆成一堆，两个人轮流从这堆物品中取，规定每次至少取一个，最多取 m 个。最后取光者得胜。  解决方法：if (n % (m+1) == 0), 先手lose；否则，先手win。  经典的三种博弈游戏还包括：Wythoff’s g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法：数组 ">
+<meta property="og:url" content="http://yoursite.com/2019/03/12/Untitled/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="简介2019年新学期起，决定开始Leetcode刷题，并在博客总结记录。 内容 292 Nim游戏  这其实是一个Bash Game（巴什博弈）问题，一般表述是：n 个物品堆成一堆，两个人轮流从这堆物品中取，规定每次至少取一个，最多取 m 个。最后取光者得胜。  解决方法：if (n % (m+1) == 0), 先手lose；否则，先手win。  经典的三种博弈游戏还包括：Wythoff’s g">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-12T14:59:08.842Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法：数组 ">
+<meta name="twitter:description" content="简介2019年新学期起，决定开始Leetcode刷题，并在博客总结记录。 内容 292 Nim游戏  这其实是一个Bash Game（巴什博弈）问题，一般表述是：n 个物品堆成一堆，两个人轮流从这堆物品中取，规定每次至少取一个，最多取 m 个。最后取光者得胜。  解决方法：if (n % (m+1) == 0), 先手lose；否则，先手win。  经典的三种博弈游戏还包括：Wythoff’s g">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Untitled" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/12/Untitled/" class="article-date">
+  <time datetime="2019-03-12T14:50:22.000Z" itemprop="datePublished">2019-03-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      算法：数组 
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>2019年新学期起，决定开始Leetcode刷题，并在博客总结记录。</p>
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><ul>
+<li>292 Nim游戏<br>  这其实是一个Bash Game（巴什博弈）问题，一般表述是：n 个物品堆成一堆，两个人轮流从这堆物品中取，规定每次至少取一个，最多取 m 个。最后取光者得胜。<br>  解决方法：if (n % (m+1) == 0), 先手lose；否则，先手win。<br>  经典的三种博弈游戏还包括：Wythoff’s game（威佐夫博奕），Nimm game（尼姆博弈），参考：<a href="https://blog.csdn.net/holly_Z_P_F/article/details/82083635" target="_blank" rel="noopener">https://blog.csdn.net/holly_Z_P_F/article/details/82083635</a></li>
+<li><p>9 回文数<br>  笨解法：数组法，把数字转化成nums[10]的数组。（int类型占4字节，范围包括-2^31~(2^31)-1，即-2147483648~2147483647，最大的数也只有10位)<br>  原地算法：原数依次除以10，得商x，取余数为末位数字。同时，生成颠倒数y，然后比较x和y的异同。(0以外的末尾为0的数都是非回文数)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">bool isPalindrome(int x) &#123;</span><br><span class="line">    if (x&gt;=0 &amp;&amp; x&lt;10)</span><br><span class="line">        return true;</span><br><span class="line">    if (x&lt;0 || x%10 == 0) // 负数或者末尾为0的数不是回文数</span><br><span class="line">        return false;</span><br><span class="line">    int y = 0;</span><br><span class="line">    int temp = 0;</span><br><span class="line">    while (x&gt;0)&#123;</span><br><span class="line">        temp = x % 10;</span><br><span class="line">        y = y * 10 + temp;</span><br><span class="line">        x = x / 10;</span><br><span class="line">        if (x == y)</span><br><span class="line">            return true;</span><br><span class="line">        if (y &gt; x) // x为奇数或非回文偶数时，y会比x多一位</span><br><span class="line">            break;</span><br><span class="line">    &#125;</span><br><span class="line">    return (y/10) == x ? true:false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>396 旋转函数<br>递推算法：计算首项，根据递推式求后续所有项。重点在于找到递推式：<code>Fx = F(x-1) + sum - n*A[n-x]</code>.</p>
+</li>
+<li><p>数组</p>
+<ul>
+<li><p>136 只出现一次的数字<br>异或用法：<code>a^a=0, 0^b=b</code>. 本题只需要把数组所有的元素异或起来则可以得到只出现一次的数字。<br>不使用额外变量交换数值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = a^b;</span><br><span class="line">b = b^a;</span><br><span class="line">a = a^b;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>36 有效的数独<br>哈希映射存储已访问元素及其索引：若发现不符合目标的结果，则返回错误。</p>
+</li>
+<li><p>189 旋转数组<br>循环右移：依次循环移动末尾元素到首位，持续k次。<br>翻转实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reverse(nums, 0, n - 1);</span><br><span class="line">reverse(nums, 0, k - 1);</span><br><span class="line">reverse(nums, k, n - 1);</span><br></pre></td></tr></table></figure>
+<p>递归解法：k &gt;= 剩下元素个数则停止。后k个元素先交换移动到前k个位置，递归旋转k次剩下的元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">private void recursiveSwap(int[] nums, int k, int start, int length) &#123;</span><br><span class="line">    k %= length;</span><br><span class="line">    if (k != 0) &#123;</span><br><span class="line">        for (int i = 0; i &lt; k; i++) &#123;</span><br><span class="line">            swap(nums, start + i, nums.length - k + i);</span><br><span class="line">        &#125;</span><br><span class="line">        recursiveSwap(nums, k, start + k, length - k);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>217 存在重复元素<br>先排序后操作：先做快速排序，简化问题，再做下一步操作，时间复杂度一般在O(nlogn).</p>
+</li>
+<li>26 删除排序数组中的重复项<br>双指针法：设置快慢指针，慢指针i表示所求结果数组的最末元素，快指针j遍历原数组的元素。当两指针所指元素一致则j++；不一致则nums[i++]=nums[j++];</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/12/Untitled/" data-id="cjt5witgs0000pktiuf2uew65" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/02/18/Hexo写博客和hexo-admin管理/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo写博客和Hexo Admin管理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/12/Untitled/">算法：数组 </a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/18/Hexo写博客和hexo-admin管理/">Hexo写博客和Hexo Admin管理</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/17/Github和Hexo搭建博客/">Github和Hexo搭建博客</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
