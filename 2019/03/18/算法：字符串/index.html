@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>算法：字符串 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Map 332 重新安排行程使用Map统计时写法：12345for (int i = 0; i &amp;lt; keys.length; i++) &amp;#123;    if (!map.containsKey(keys[i]))        map.put(keys[i], new ArrayList&amp;lt;&amp;gt;());    map.get(keys[i]).add(values[i]);&amp;#1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法：字符串">
+<meta property="og:url" content="http://yoursite.com/2019/03/18/算法：字符串/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Map 332 重新安排行程使用Map统计时写法：12345for (int i = 0; i &amp;lt; keys.length; i++) &amp;#123;    if (!map.containsKey(keys[i]))        map.put(keys[i], new ArrayList&amp;lt;&amp;gt;());    map.get(keys[i]).add(values[i]);&amp;#1">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-18T08:01:52.560Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法：字符串">
+<meta name="twitter:description" content="Map 332 重新安排行程使用Map统计时写法：12345for (int i = 0; i &amp;lt; keys.length; i++) &amp;#123;    if (!map.containsKey(keys[i]))        map.put(keys[i], new ArrayList&amp;lt;&amp;gt;());    map.get(keys[i]).add(values[i]);&amp;#1">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-算法：字符串" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/18/算法：字符串/" class="article-date">
+  <time datetime="2019-03-18T07:57:41.000Z" itemprop="datePublished">2019-03-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      算法：字符串
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><ul>
+<li>332 重新安排行程<br>使用Map统计时写法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for (int i = 0; i &lt; keys.length; i++) &#123;</span><br><span class="line">    if (!map.containsKey(keys[i]))</span><br><span class="line">        map.put(keys[i], new ArrayList&lt;&gt;());</span><br><span class="line">    map.get(keys[i]).add(values[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul>
+<li>Api of string.h<br>strlen: 返回值是unsigned int，注意unsigned int不能直接与负数比较。<br>strcpy: char *strcpy(char *dest, const char *src)。<br>strcat: extern char *strcat(char *dest, const char *src)，dest不可以是常量池的字符串，必须是实例化后，且长度足够。</li>
+<li>Api of limits.h<br>INT_MIN: -2147483648<br>INT_MAX: 2147483647</li>
+<li><p>344 反转字符串<br>不使用额外变量交换数值 II：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = a+b;</span><br><span class="line">b = a-b;</span><br><span class="line">a = a-b;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>7 整数反转<br>数值越界判断：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">while (x != 0) &#123;</span><br><span class="line">    int pop = x % 10;</span><br><span class="line">    x /= 10;</span><br><span class="line">    if (rev &gt; INT_MAX/10 || (rev == INT_MAX / 10 &amp;&amp; pop &gt; 7)) return 0;</span><br><span class="line">    if (rev &lt; INT_MIN/10 || (rev == INT_MIN / 10 &amp;&amp; pop &lt; -8)) return 0;</span><br><span class="line">    rev = rev * 10 + pop;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>125 验证回文串<br>双指针法 II: 设置头尾指针，遇到不合法情况跳过，合法情况下比较。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">while (i&lt;j)&#123;</span><br><span class="line">    while ((&apos;0&apos;&gt;s[i] || s[i]&gt;&apos;9&apos;) &amp;&amp; (&apos;a&apos;&gt;s[i] || s[i]&gt;&apos;z&apos;) &amp;&amp; (&apos;A&apos;&gt;s[i] || s[i]&gt;&apos;Z&apos;) &amp;&amp; i&lt;j)</span><br><span class="line">        i++;</span><br><span class="line">    while ((&apos;0&apos;&gt;s[j] || s[j]&gt;&apos;9&apos;) &amp;&amp; (&apos;a&apos;&gt;s[j] || s[j]&gt;&apos;z&apos;) &amp;&amp; (&apos;A&apos;&gt;s[j] || s[j]&gt;&apos;Z&apos;) &amp;&amp; i&lt;j)</span><br><span class="line">        j--;</span><br><span class="line">    if (s[i] != s[j])</span><br><span class="line">        if ( (&apos;0&apos;&lt;=s[i] &amp;&amp; s[i]&lt;=&apos;9&apos;) || !equalIgnoreCast(s[i],s[j]))</span><br><span class="line">            return false;</span><br><span class="line">    i++;</span><br><span class="line">    j--;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>8 字符串转换整数 (atoi)<br>计算$x$的位数：$log_{10}(x)$<br>各位数字构造负数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rev = rev*10 - pop;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>28 实现strStr()<br>模式匹配常规模板：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">while (i&lt;mainLen &amp;&amp; j&lt;pLen)&#123;</span><br><span class="line">    if (main[i] == p[j])&#123;</span><br><span class="line">      i++;</span><br><span class="line">      j++;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        i = i - j;</span><br><span class="line">        j = 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>KMP求next数组： 当p[0…k-1] == p[j-k…j-1]时，next[j] = k。</p>
+<ul>
+<li>14 最长公共前缀<br>分治法：问题规模为1时返回原值，求左右两侧子问题解，取左右子解的LCP。<br>二分查找法：取最短字符串作为初始串，取其左部分与全字符串数组比较，若是LCP，则取左；否则取右。直至左指针小于右指针跳出循环。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">while (low &lt;= high) &#123;</span><br><span class="line">    int middle = (low + high) / 2;</span><br><span class="line">    if (isCommonPrefix(strs, middle))</span><br><span class="line">        low = middle + 1;</span><br><span class="line">    else</span><br><span class="line">        high = middle - 1;</span><br><span class="line">&#125;</span><br><span class="line">return strs[0].substring(0, (low + high) / 2);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/18/算法：字符串/" data-id="cjte297g60000doti6xdhgti0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/12/算法：数组/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">算法：数组 </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/18/算法：字符串/">算法：字符串</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/12/算法：数组/">算法：数组 </a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/18/Hexo写博客和hexo-admin管理/">Hexo写博客和Hexo Admin管理</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/17/Github和Hexo搭建博客/">Github和Hexo搭建博客</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
