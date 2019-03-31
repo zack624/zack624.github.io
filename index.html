@@ -62,6 +62,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-算法：链表" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/31/算法：链表/" class="article-date">
+  <time datetime="2019-03-31T04:50:12.000Z" itemprop="datePublished">2019-03-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/31/算法：链表/">算法：链表</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>237 删除链表中的节点<br>先复制其他结点内容到当前结点，再删除其他结点，实现删除当前结点。</li>
+<li><p>19 删除链表的倒数第N个节点<br>双指针法（链表）：快指针先移动n+1位，慢指针再出发，然后快指针达到NULL位置时，慢指针就处于倒数第n+1个。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public ListNode removeNthFromEnd(ListNode head, int n) &#123;</span><br><span class="line">    ListNode dummy = new ListNode(0);</span><br><span class="line">    dummy.next = head;</span><br><span class="line">    ListNode first = dummy;</span><br><span class="line">    ListNode second = dummy;</span><br><span class="line">    // Advances first pointer so that the gap between first and second is n nodes apart</span><br><span class="line">    for (int i = 1; i &lt;= n + 1; i++) &#123;</span><br><span class="line">        first = first.next;</span><br><span class="line">    &#125;</span><br><span class="line">    // Move first to the end, maintaining the gap</span><br><span class="line">    while (first != null) &#123;</span><br><span class="line">        first = first.next;</span><br><span class="line">        second = second.next;</span><br><span class="line">    &#125;</span><br><span class="line">    second.next = second.next.next;</span><br><span class="line">    return dummy.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>206 反转链表<br>迭代法：对每个结点做操作，一直迭代到尾结点。<br>递归法：空链表或单结点链表跳出递归，递归当前结点的后续链表，将当前结点接在反转后的后续链表尾部，并设当前结点的next为NULL值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public ListNode reverseList(ListNode head) &#123;</span><br><span class="line">    if (head == null || head.next == null) return head;</span><br><span class="line">    ListNode p = reverseList(head.next);</span><br><span class="line">    head.next.next = head;</span><br><span class="line">    head.next = null;</span><br><span class="line">    return p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>234 回文链表<br>双指针法（链表）II：快指针每次走两个结点，慢指针只走一个结点，最后快指针到达NULL位置时，慢指针就位于len/2的位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ListNode fast = head;</span><br><span class="line">ListNode slow = head;</span><br><span class="line">// 根据快慢指针，找到链表的中点</span><br><span class="line">while(fast.next != null &amp;&amp; fast.next.next != null) &#123;</span><br><span class="line">    fast = fast.next.next;</span><br><span class="line">    slow = slow.next;</span><br><span class="line">&#125;</span><br><span class="line">slow = slow.next;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2 两数相加<br>当存在一方结点不足时，可以把该加数当作0。</p>
+</li>
+<li>328 奇偶链表<br>双链表法：将奇偶结点分别连成两个链表，然后再把偶链表接到奇链表之后。</li>
+<li>141 环形链表<br>双指针法（奇偶指针）解决。</li>
+<li>160 相交链表<br>转化为环形链表问题解决。<br>计算两链表长度，截去多余结点后再平行比较。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/31/算法：链表/" data-id="cjtwg5u3k0000tgti44d0oqao" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-算法：字符串" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/18/算法：字符串/" class="article-date">
@@ -321,6 +374,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/03/31/算法：链表/">算法：链表</a>
+          </li>
         
           <li>
             <a href="/2019/03/18/算法：字符串/">算法：字符串</a>
