@@ -62,6 +62,64 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-算法：搜索和排序" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/23/算法：搜索和排序/" class="article-date">
+  <time datetime="2019-04-23T07:27:08.000Z" itemprop="datePublished">2019-04-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/23/算法：搜索和排序/">算法：排序和搜索</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>75 颜色分类<br>快速排序：基于重复元素过多的问题，有双路排序和三路排序算法。<br>双路排序即最常用的写法：<br>参考：<a href="https://blog.csdn.net/k_koris/article/details/80585979" target="_blank" rel="noopener">https://blog.csdn.net/k_koris/article/details/80585979</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">int partition(int* nums,int start,int end)&#123;</span><br><span class="line">    int pivot = nums[start];</span><br><span class="line">    while (start &lt; end)&#123;</span><br><span class="line">        while (nums[end] &gt;= pivot &amp;&amp; start&lt;end)</span><br><span class="line">            end--;</span><br><span class="line">        if (nums[end] &lt; pivot)</span><br><span class="line">            nums[start] = nums[end];</span><br><span class="line">        while (nums[start] &lt;= pivot &amp;&amp; start&lt;end)</span><br><span class="line">            start++;</span><br><span class="line">        if (nums[start] &gt; pivot)</span><br><span class="line">            nums[end] = nums[start];</span><br><span class="line">    &#125;</span><br><span class="line">    nums[start] = pivot;</span><br><span class="line">    return start;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void quick(int* nums,int start,int end)&#123;</span><br><span class="line">    if (start &lt; end)&#123;</span><br><span class="line">        int k = partition(nums,start,end);</span><br><span class="line">        quick(nums,start,k-1);</span><br><span class="line">        quick(nums,k+1,end);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>三路排序：使用 lt、gt 分别表示小于、大于pivot值的边界，i 表示当前移动的值；将数组分成小于、等于、大于pivot的三部分，再进行递归快排。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">void __quicksort3(T arr[],int l,int r)&#123;</span><br><span class="line">	if(l&gt;=r)</span><br><span class="line">	return ;</span><br><span class="line">	</span><br><span class="line">	T v=arr[l];</span><br><span class="line">	int lt=l;</span><br><span class="line">	int gt=r+1;</span><br><span class="line">	int i=l+1;</span><br><span class="line">	while(i&lt;gt)&#123;</span><br><span class="line">		if(arr[i]&lt;v)&#123;</span><br><span class="line">			swap(arr[i],arr[lt+1]);</span><br><span class="line">			lt++;</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">		else if(arr[i]&gt;v)&#123;</span><br><span class="line">			swap(arr[i],arr[gt-1]);</span><br><span class="line">			gt--;</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">			i++;</span><br><span class="line">	&#125;</span><br><span class="line">	swap(arr[l],arr[lt]);</span><br><span class="line">	 __quicksort3(arr,l,lt-1);</span><br><span class="line">	 __quicksort3(arr,gt,r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>88 合并两个有序数组<br>数组移动数据时，从已有数组区从空白区填充。  </li>
+<li>34 在排序数组中查找元素的第一个和最后一个位置<br>二分查找：<br>循环条件用<code>left&lt;=right</code>；<br>依据中点值分配左右区时，判断中点是否应该再算入左右区，以避免对中点前后的多次判断；<br>对数组0和len-1值的处理应该放到<code>if(mid符合条件)</code>条件下，而不是另外作判断。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 二分查找排序数组中某元素的第一个位置</span><br><span class="line">while (left &lt;= right)&#123;</span><br><span class="line">    int mid = left + (right-left)/2;</span><br><span class="line">    if (nums[mid]==target)&#123;</span><br><span class="line">        if (mid==0||nums[mid-1]&lt;target)&#123;</span><br><span class="line">            tl = mid;</span><br><span class="line">            break;</span><br><span class="line">        &#125;else</span><br><span class="line">            right = mid-1;</span><br><span class="line">    &#125;else if(nums[mid]&gt;target)&#123;</span><br><span class="line">        right = mid-1;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        left = mid+1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">if (tl==-1) return res;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>215 数组中的第K个最大元素<br>类似第k个最大这种题型：第K个最大用小根堆，最小用大根堆。优先队列可以用堆实现，堆本质是完全二叉树，可以用数组实现。堆化操作时间复杂度O(logn).</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public int findKthLargest(int[] nums, int k) &#123;</span><br><span class="line">    PriorityQueue&lt;Integer&gt; heap = new PriorityQueue();</span><br><span class="line">    for (int i=0;i&lt;nums.length;i++)&#123;</span><br><span class="line">        if (heap.size() == k)&#123;</span><br><span class="line">            if (heap.peek() &lt; nums[i])</span><br><span class="line">                heap.poll();</span><br><span class="line">            else</span><br><span class="line">                continue;</span><br><span class="line">        &#125;</span><br><span class="line">        heap.add(nums[i]); // java PriorityQueue默认是小根堆</span><br><span class="line">    &#125;</span><br><span class="line">    return heap.peek();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>56 合并区间<br>并查集：参考<a href="https://www.jianshu.com/p/b37ba1f7d45c" target="_blank" rel="noopener">https://www.jianshu.com/p/b37ba1f7d45c</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">def merge(self, intervals: List[Interval]) -&gt; List[Interval]:</span><br><span class="line">    if intervals == []: return []</span><br><span class="line">    intervals.sort(key=lambda p:p.start) // 先按start进行排序</span><br><span class="line">    rst = []</span><br><span class="line">    tmp = intervals[0]</span><br><span class="line">    for i in intervals: // 遍历所有区间，若当前区间start&lt;=所求集合已有的最末元素的end，则合并</span><br><span class="line">        if i.start &lt;= tmp.end:</span><br><span class="line">            if tmp.end &lt;= i.end:</span><br><span class="line">                tmp.end = i.end</span><br><span class="line">        else: // 否则将其加入所求集合</span><br><span class="line">            rst.append(tmp)</span><br><span class="line">            tmp = i</span><br><span class="line">    rst.append(tmp)</span><br><span class="line">    return rst</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>240 搜索二维矩阵 II<br>二分查找 II:<br>可以利用nums[left], nums[right], nums[mid] 协助判断；<br>二维矩阵搜索：利用矩阵左上(sx,sy)和右下角(ex,ey)元素作为定位，中间元素为((sx+ex)/2,(sy+ey)/2), 并用中点的上下左右点(sx,ny), (ex,ny), (nx,sy), (nx,ey)协助确定下一次搜索的子矩阵。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/23/算法：搜索和排序/" data-id="cjutgx3er00007ktimdgqvw6q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-算法：树" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/11/算法：树/" class="article-date">
@@ -136,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/11/算法：树/" data-id="cjucnzdk500000stibzuit7oo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/11/算法：树/" data-id="cjucntg5300006wti3c647k4a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -460,6 +518,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/23/算法：搜索和排序/">算法：排序和搜索</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/11/算法：树/">算法：树</a>
           </li>
         
@@ -473,10 +535,6 @@
         
           <li>
             <a href="/2019/03/12/算法：数组/">算法：数组 </a>
-          </li>
-        
-          <li>
-            <a href="/2019/02/18/Hexo写博客和hexo-admin管理/">Hexo写博客和Hexo Admin管理</a>
           </li>
         
       </ul>
